@@ -10,7 +10,7 @@ windows10
 - flex
 - boost库 
 ## 编译
-命令行中进入该文件夹，输入:
+编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后命令行中进入该文件夹，输入:
 
 $ mingw32-make
 
@@ -20,7 +20,7 @@ $ mingw32-make clean
 
 来删除生成的文件。
 ## 运行
-编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后直接双击运行或在命令行下运行smalldbms.exe即可。需要注意的是，首次运行会在当前工作目录（双击运行的当前工作目录就是exe文件所在的文件夹，命令行下运行的则是命令行中的当前目录）下创建名为“SmallDBMS-place-of-database”的文件夹。程序创建的文件都将放在这个文件夹中。进入程序之后，就可以输入sql语句了。
+直接双击运行或在命令行下运行smalldbms.exe即可。需要注意的是，首次运行会在当前工作目录（双击运行的当前工作目录就是exe文件所在的文件夹，命令行下运行的则是命令行中的当前目录）下创建名为“SmallDBMS-place-of-database”的文件夹。程序创建的文件都将放在这个文件夹中。进入程序之后，就可以输入sql语句了。
 ## SmallDBMS的局限性
 这东西真的不行。它只支持下面这些sql语句（注意别忘了分号啊）。
 
@@ -28,6 +28,7 @@ $ mingw32-make clean
 - create database DATABASENAME;
 - use DATABASENAME;
 - drop DATABASE;
+
 表相关操作：
 - create table 只支持int和varchar两种数据类型；只支持主码约束这一种列级约束，不支持表级约束。
 
@@ -42,6 +43,7 @@ sex varchar,
 );
 ```
 - drop table TABLENAME;
+
 记录相关操作：
 - insert into
 
@@ -93,7 +95,7 @@ select id,name from fish where sex=female;
 boost编译后从其lib文件夹下拷过来的，链接时用，需要它里面的序列化函数。
 - ./win_flex_bison3-latest
 
-windows下可用的bison和flex的二进制文件，从[这里](https://sourceforge.net/projects/winflexbison/files/)下载。
+windows下可用的bison和flex的二进制文件，从[这里](https://sourceforge.net/projects/winflexbison/files/)下载来的。
 ## 参考资料
 - [mingw下载](https://sourceforge.net/projects/mingw-w64/files/)
 - [boost下载](https://www.boost.org/)
@@ -103,4 +105,4 @@ windows下可用的bison和flex的二进制文件，从[这里](https://sourcefo
 - <https://www.cnblogs.com/hdk1993/p/4922866.html>
 - <https://github.com/jonathan-beard/simple_wc_example>
 ## ps
-累了。为了写这个东西旷了4节课，一次实验没交，最后也只能达到这种效果。就这样交了吧。代码写的奇烂，主函数已经堆了500行了。如果运行出现了bug，再正常不过了，非常欢迎向我反馈，不过我可能没什么精力去改了。代码仅供学习交流使用。欢迎有能大佬增加新的功能和特性。_(´ཀ`」 ∠)_
+累了。为了写这个东西旷了4节课，有一次实验还没交，最后也只能达到这种效果。就这样交了吧。代码写的奇烂，主函数已经堆了500行了。如果运行出现了bug，再正常不过了，非常欢迎向我反馈，不过我可能没什么精力去改了。代码仅供学习交流使用。欢迎有能大佬增加新的功能和特性。_(´ཀ`」 ∠)_
