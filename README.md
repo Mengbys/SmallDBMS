@@ -10,15 +10,13 @@ windows10
 - flex
 - boost库 
 ## 编译
-编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后命令行中进入该文件夹，输入:
+编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后命令行中进入该文件夹，输入以下命令生成二进制文件:
 
 $ mingw32-make
 
-也可以输入：
+也可以输入以下命令来删除生成的文件：
 
 $ mingw32-make clean
-
-来删除生成的文件。
 ## 运行
 直接双击运行或在命令行下运行smalldbms.exe即可。需要注意的是，首次运行会在当前工作目录（双击运行的当前工作目录就是exe文件所在的文件夹，命令行下运行的则是命令行中的当前目录）下创建名为“SmallDBMS-place-of-database”的文件夹。程序创建的文件都将放在这个文件夹中。进入程序之后，就可以输入sql语句了。
 ## SmallDBMS的局限性
@@ -27,7 +25,7 @@ $ mingw32-make clean
 数据库相关操作：
 - create database DATABASENAME;
 - use DATABASENAME;
-- drop DATABASE;
+- drop database DATABASENAME;
 
 表相关操作：
 - create table 只支持int和varchar两种数据类型；只支持主码约束这一种列级约束，不支持表级约束。
@@ -105,4 +103,4 @@ windows下可用的bison和flex的二进制文件，从[这里](https://sourcefo
 - <https://www.cnblogs.com/hdk1993/p/4922866.html>
 - <https://github.com/jonathan-beard/simple_wc_example>
 ## ps
-累了。为了写这个东西旷了4节课，有一次实验还没交，最后也只能达到这种效果。就这样交了吧。代码写的奇烂，主函数已经堆了500行了。如果运行出现了bug，再正常不过了，非常欢迎向我反馈，不过我可能没什么精力去改了。代码仅供学习交流使用。欢迎有能大佬增加新的功能和特性。_(´ཀ`」 ∠)_
+累了。为了写这个东西旷了4节课，有一次实验还没交，最后也只能达到这种效果。就这样交了吧。代码写的奇烂，主函数已经堆了500行了。如果运行出现了bug，再正常不过了，非常欢迎向我反馈，不过我可能没什么精力去改了。还有，如果你输入的sql语句无法解析，那是因为SmallDBMS还没实现相对应的功能，哈哈。代码仅供学习交流使用。欢迎有能大佬增加新的功能和特性。_(´ཀ`」 ∠)_
