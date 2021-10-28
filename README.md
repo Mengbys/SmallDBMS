@@ -26,6 +26,7 @@ $ mingw32-make clean
 - drop DATABASE;
 表相关操作：
 - create table 只支持int和varchar两种数据类型；只支持主码约束这一种列级约束，不支持表级约束。
+
 eg:
 ```sql
 create table fish
@@ -39,6 +40,7 @@ sex varchar,
 - drop table TABLENAME;
 记录相关操作：
 - insert into
+
 eg1:
 ```sql
 insert into fish
@@ -50,6 +52,7 @@ insert into fish(id,name)
 values(5,ball);
 ```
 - update
+
 eg:
 ```sql
 update fish
@@ -57,6 +60,7 @@ set name=mike,sex=male
 where id=6;
 ```
 - delete
+
 eg1:
 ```
 delete * from fish;
@@ -67,6 +71,7 @@ delete from fish
 where name=jane;
 ```
 - select 支持单表查询，也只支持等值过滤。
+
 eg1:
 ```sql
 select * from fish;
