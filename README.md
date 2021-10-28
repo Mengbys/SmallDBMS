@@ -11,9 +11,13 @@ windows10
 - boost库 
 ## 编译
 命令行中进入该文件夹，输入:
+
 $ mingw32-make
+
 也可以输入：
+
 $ mingw32-make clean
+
 来删除生成的文件。
 ## 运行
 编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后直接双击运行或在命令行下运行smalldbms.exe即可。需要注意的是，首次运行会在当前工作目录（双击运行的当前工作目录就是exe文件所在的文件夹，命令行下运行的则是命令行中的当前目录）下创建名为“SmallDBMS-place-of-database”的文件夹。程序创建的文件都将放在这个文件夹中。进入程序之后，就可以输入sql语句了。
@@ -81,9 +85,15 @@ eg2:
 select id,name from fish where sex=female;
 ```
 ## 相关文件说明
-- ./include/FlexLexer.h 在linux中安装flex后，从linux平台拷过来的。没办法bison、flex本来就是linux下的工具。
-- ./lib/libboost_serialization-mgw8-mt-x64-1_77.a boost编译后从其lib文件夹下拷过来的，链接时用，需要它里面的序列化函数。
-- ./win_flex_bison3-latest windows下可用的bison和flex的二进制文件，从[这里](https://sourceforge.net/projects/winflexbison/files/)下载。
+- ./include/FlexLexer.h
+
+在linux中安装flex后，从linux平台拷过来的。没办法bison、flex本来就是linux下的工具。
+- ./lib/libboost_serialization-mgw8-mt-x64-1_77.a
+
+boost编译后从其lib文件夹下拷过来的，链接时用，需要它里面的序列化函数。
+- ./win_flex_bison3-latest
+
+windows下可用的bison和flex的二进制文件，从[这里](https://sourceforge.net/projects/winflexbison/files/)下载。
 ## 参考资料
 - [mingw下载](https://sourceforge.net/projects/mingw-w64/files/)
 - [boost下载](https://www.boost.org/)
