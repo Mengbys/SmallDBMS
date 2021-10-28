@@ -1,5 +1,4 @@
 # SmallDBMS
-- - -
 ## 介绍
 SmallDBMS是一个极其简单的DBMS（数据库管理系统），或许可以把它理解成幼儿版的mysql？这个是《高级数据库技术》课程的大作业。老师推荐用java+javacc来实现，可我对java一窍不通。老师上课的时候提了一嘴说：“用C也可以，但要用到yacc和lex。”我实在不想从头再学一门语言（指java）了，所以一下课我就回去找相关的资料，看看能不能搞。查了之后发现新版本的yacc和lex变成了bison和flex，而且也有对C++的支持。那，试试看呗。试试就逝世，十天就这么没了。
 ## 平台
@@ -20,11 +19,11 @@ $ mingw32-make clean
 编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后直接双击运行或在命令行下运行smalldbms.exe即可。需要注意的是，首次运行会在当前工作目录（双击运行的当前工作目录就是exe文件所在的文件夹，命令行下运行的则是命令行中的当前目录）下创建名为“SmallDBMS-place-of-database”的文件夹。程序创建的文件都将放在这个文件夹中。进入程序之后，就可以输入sql语句了。
 ## SmallDBMS的局限性
 这东西真的不行。它只支持下面这些sql语句（注意别忘了分号啊）。
-+ 数据库相关操作
+数据库相关操作：
 - create database DATABASENAME;
 - use DATABASENAME;
 - drop DATABASE;
-+ 表相关操作
+表相关操作：
 - create table 只支持int和varchar两种数据类型；只支持主码约束这一种列级约束，不支持表级约束。
 eg:
 ```sql
@@ -37,7 +36,7 @@ sex varchar,
 );
 ```
 - drop table TABLENAME;
-+ 记录相关操作
+记录相关操作：
 - insert into
 eg1:
 ```sql
