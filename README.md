@@ -1,6 +1,6 @@
 # SmallDBMS
 ## 介绍
-SmallDBMS是一个极其简单的DBMS（数据库管理系统），或许可以把它理解成幼儿版的mysql？这个是《高级数据库技术》课程的大作业。老师推荐用java+javacc来实现，可我对java一窍不通。老师上课的时候提了一嘴说：“用C也可以，但要用到yacc和lex。”我实在不想从头再学一门语言（指java）了，所以一下课我就回去找相关的资料，看看能不能搞。查了之后发现新版本的yacc和lex变成了bison和flex，而且也有对C++的支持。那，试试看呗。试试就逝世，十天就这么没了。最终的exe文件可以从[这里](https://github.com/Mengbys/SmallDBMS/releases/tag/v1.0)。
+SmallDBMS是一个极其简单的DBMS（数据库管理系统），或许可以把它理解成幼儿版的mysql？这个是《高级数据库技术》课程的大作业。老师推荐用java+javacc来实现，可我对java一窍不通。老师上课的时候提了一嘴说：“用C也可以，但要用到yacc和lex。”我实在不想从头再学一门语言（指java）了，所以一下课我就回去找相关的资料，看看能不能搞。查了之后发现新版本的yacc和lex变成了bison和flex，而且也有对C++的支持。那，试试看呗。试试就逝世，十天就这么没了。最终的exe文件可以从[这里](https://github.com/Mengbys/SmallDBMS/releases/tag/v1.0)下载。
 ## 平台
 windows10
 ## 需要的工具
@@ -26,6 +26,7 @@ $ mingw32-make clean
 - create database DATABASENAME;
 - use DATABASENAME;
 - drop database DATABASENAME;
+- show databases
 
 表相关操作：
 - create table 只支持int和varchar两种数据类型；只支持主码约束这一种列级约束，不支持表级约束。
@@ -41,6 +42,7 @@ sex varchar,
 );
 ```
 - drop table TABLENAME;
+- show tables;
 
 记录相关操作：
 - insert into
