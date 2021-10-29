@@ -12,23 +12,23 @@ windows10
 ## 编译
 编译安装boost之后，将makefile中的COMPILEOPT_BOOST_INC变量改为你对应的目录。然后命令行中进入该文件夹，输入以下命令生成二进制文件:
 
-$ mingw32-make
+`$ mingw32-make`
 
 也可以输入以下命令来删除生成的文件：
 
-$ mingw32-make clean
+`$ mingw32-make clean`
 ## 运行
 直接双击运行或在命令行下运行smalldbms.exe即可。需要注意的是，首次运行会在当前工作目录（双击运行的当前工作目录就是exe文件所在的文件夹，命令行下运行的则是命令行中的当前目录）下创建名为“SmallDBMS-place-of-database”的文件夹。程序创建的文件都将放在这个文件夹中。进入程序之后，就可以输入sql语句了。
 ## SmallDBMS的局限性
 这东西真的不行。它只支持下面这些sql语句（注意别忘了分号啊）。
 
-数据库相关操作：
+__数据库相关操作__：
 - create database DATABASENAME;
 - use DATABASENAME;
 - drop database DATABASENAME;
 - show databases
 
-表相关操作：
+__表相关操作__：
 - create table 只支持int和varchar两种数据类型；只支持主码约束这一种列级约束，不支持表级约束。
 
 eg:
@@ -44,7 +44,7 @@ sex varchar,
 - drop table TABLENAME;
 - show tables;
 
-记录相关操作：
+__记录相关操作__：
 - insert into
 
 eg1:
