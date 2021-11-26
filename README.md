@@ -107,4 +107,4 @@ windows下可用的bison和flex的二进制文件，从[这里](https://sourcefo
 ## ps
 累了。为了写这个东西旷了4节课，有一次实验还没交，最后也只能达到这种效果。就这样交了吧。代码写的奇烂，主函数已经堆了500行了。如果运行出现了bug，再正常不过了，非常欢迎向我反馈，不过我可能没什么精力去改了。还有，如果你输入的sql语句无法解析，那是因为SmallDBMS还没实现相对应的功能，哈哈。代码仅供学习交流使用。欢迎有能大佬增加新的功能和特性。_(´ཀ`」 ∠)_
 ## 运行预览
-![running](https://github.com/Mengbys/SmallDBMS/tree/main/screenshot/2.png)
+![running](https://github.com/Mengbys/SmallDBMS/blob/main/screenshot/2.png)
