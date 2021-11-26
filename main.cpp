@@ -188,15 +188,40 @@ int main()
                 for (int i=0; i<size; i++)
                 {
                     columnStrList[i]=driver.strList1[i];
-                    if(columnStrList[i]==columnStrList_all[primary_index])
+                    // remove primary key check for no primary key table 2021-11-26
+                    if(primary_index!=-1 && columnStrList[i]==columnStrList_all[primary_index])
                         check_have_primary_key=1;
                     valueStrList[i]=driver.strList2[i];
                 }
-                if(!check_have_primary_key)
+                // remove primary key check for no primary key table 2021-11-26
+                if(primary_index!=-1 && !check_have_primary_key)
                 {
                     cout<<"[ERROR] Missing primary key's value.\n";
                     continue;
                 }
+
+                // add column name existence check 2021-11-26
+                bool check_names_exist=1;
+                for(int i=0; i<size; i++)
+                {
+                    bool check_this_name_exist=0;
+                    for(int j=0; j<numOfColumn; j++)
+                    {
+                        if(columnStrList[i]==columnStrList_all[j])
+                        {
+                            check_this_name_exist=1;
+                            break;
+                        }
+                    }
+                    if(!check_this_name_exist)
+                    {
+                        check_names_exist=0;
+                        cout<<"[ERROR] No column named "<<columnStrList[i]<<"!\n";
+                        break;
+                    }
+                }
+                if(!check_names_exist)
+                    continue;
 
                 for (int i=0; i<numOfColumn; i++)
                 {
@@ -367,9 +392,7 @@ int main()
                 }
             }
             if(!check_names_exist)
-            {
                 continue;
-            }
 
             // check value and data type
             if(!checkRecordTypeAndValue(numOfSet-1,typeOfSet,valueOfSet))
